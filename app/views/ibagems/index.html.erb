@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Ibagems</h1>
+
+<div id="ibagems">
+  <% @ibagems.each do |ibagem| %>
+    <%= render ibagem %>
+    <p>
+      <%= link_to "Show this ibagem", ibagem %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New ibagem", new_ibagem_path %>

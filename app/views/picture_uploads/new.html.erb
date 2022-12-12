@@ -1,0 +1,7 @@
+<h1>Upload for Ibagem <%= @ibagem.name %></h1>
+
+<%= form_with model: @ibagem, url: ibagem_picture_uploads_path(@ibagem),
+              method: :post, local: true do |f| %>
+  <%= f.file_field :pictures, multiple: true %><br /><br />
+  <%= f.submit 'Upload' %>
+<% end %>

@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @ibagem %>
+
+<div>
+  <%= link_to "Edit this ibagem", edit_ibagem_path(@ibagem) %> |
+  <%= link_to "Back to ibagems", ibagems_path %>
+  <%= link_to 'Upload Files', new_ibagem_picture_upload_path(@ibagem) %>
+
+  <%= button_to "Destroy this ibagem", @ibagem, method: :delete %>
+</div>
+
+<h5>Files</h5>
+
+<ul>
+ <% @ibagem.pictures.each do |picture| %>
+    <li>
+      <%= image_tag url_for(picture), size: "300" %>
+      <%= button_to "X", ibagem_picture_upload_path(@ibagem, picture), method: :delete %>
+    </li>
+ <% end %>
+</ul>
